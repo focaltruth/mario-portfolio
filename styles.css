@@ -432,6 +432,11 @@ a {
 @media (max-width: 860px) {
   .work__card {
     grid-template-columns: 1fr;
+    position: sticky;
+  }
+
+  .work__card + .work__card {
+    margin-top: 400px;
   }
 }
 
