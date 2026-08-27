@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mario Chanona — Portfolio</title>
+  <!-- Inter + Inter Tight, used site-wide -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--
+    Pure-CSS grid + glow background (see .page-bg in styles.css) — no image
+    file. A decorative layer behind the top of the page, NOT a wrapper
+    around the content, so it always blends smoothly into whatever section
+    comes after it, no matter how tall your page grows.
+  -->
+  <div class="page-bg" aria-hidden="true"></div>
+  <main>
+    <header class="navbar" id="top">
+      <a href="#top" class="navbar__brand">
+        <img src="images/My_ Logo.png" alt="Mario Chanona" class="navbar__logo-img" />
+      </a>
+      <nav class="navbar__links" aria-label="Primary">
+        <a href="#work" class="navbar__link">Work</a>
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#playground" class="navbar__link">Playground</a>
+        <a href="#resume" class="navbar__link">Resume</a>
+      </nav>
+      <a href="#contact" class="navbar__cta">Let's Talk</a>
+
+      <button type="button" class="navbar__toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="navbar__toggle-icon navbar__toggle-icon--menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu__header">
+        <a href="#top" class="mobile-menu__brand">
+          <img src="images/My_ Logo.png" alt="Mario Chanona" class="mobile-menu__logo-img" />
+        </a>
+        <button type="button" class="mobile-menu__close" id="menuClose" aria-label="Close menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a href="#work" class="mobile-menu__link">Work</a>
+        <a href="#about" class="mobile-menu__link">About</a>
+        <a href="#playground" class="mobile-menu__link">Playground</a>
+        <a href="#resume" class="mobile-menu__link">Resume</a>
+      </nav>
+
+      <a href="#contact" class="mobile-menu__cta">Let's Talk</a>
+    </div>
+
+    <script>
+      (function () {
+        var toggle = document.getElementById('menuToggle');
+        var closeBtn = document.getElementById('menuClose');
+        var menu = document.getElementById('mobileMenu');
+
+        function openMenu() {
+          menu.classList.add('is-open');
+          toggle.classList.add('is-active');
+          toggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          menu.classList.remove('is-open');
+          toggle.classList.remove('is-active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', function () {
+          menu.classList.contains('is-open') ? closeMenu() : openMenu();
+        });
+        closeBtn.addEventListener('click', closeMenu);
+        menu.querySelectorAll('.mobile-menu__link, .mobile-menu__cta').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+      })();
+    </script>
+    
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Product Designer</h1>
+        <p class="hero__description">
+          Hi, I'm Mario, a passionate Product Designer from Houston who turns user
+          challenges into enjoyable and impactful digital experiences.
+        </p>
+        <a href="#contact" class="hero__cta">Let's Talk</a>
+      </div>
+    </section>
+    <section class="trusted" aria-label="Trusted by">
+      <p class="trusted__label">Trusted by honorary clients</p>
+      <div class="trusted__marquee">
+        <div class="trusted__track">
+          <span class="trusted__logo"><img src="images/mitchell.png" alt="Mitchell Institute" /></span>
+          <span class="trusted__logo"><img src="images/Player3.png" alt="Saxon Insurance Services" /></span>
+          <span class="trusted__logo"><img src="images/TX_Logo.png" alt="Texas A&amp;M University" /></span>
+          <span class="trusted__logo"><img src="images/TX_Logo.png"
+              alt="Texas A&amp;M Physics &amp; Astronomy" /></span>
+          <!-- duplicate copy, aria-hidden so screen readers don't announce it twice -->
+          <span class="trusted__logo" aria-hidden="true"><img src="images/mitchell.png" alt="" /></span>
+          <span class="trusted__logo" aria-hidden="true"><img src="images/Player3.png" alt="" /></span>
+          <span class="trusted__logo" aria-hidden="true"><img src="images/TX_Logo.png" alt="" /></span>
+          <span class="trusted__logo" aria-hidden="true"><img src="images/TX_Logo.png" alt="" /></span>
+        </div>
+      </div>
+    </section>
+    <section class="work" aria-label="Featured work">
+      <div class="work__intro">
+        <span class="work__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
+          </svg>
+          Featured Work
+        </span>
+        <h2 class="work__heading">Explore My Work</h2>
+        <p class="work__subheading">Discover How I Turn Complex Challenges into Creative Solutions</p>
+      </div>
+
+      <!-- Card 1 -->
+      <div class="work__card work__card--1">
+        <div class="work__card-content">
+          <img src="images/Player3.png" alt="Player" class="work__project-logo" />
+          <h3 class="work__project-title">
+            Redesigning a gaming social network with 40% weekly user participation
+          </h3>
+          <a href="#" class="work__cta">
+            View Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+          <div class="work__stats">
+            <div class="work__stat">
+              <span class="work__stat-number">40%</span>
+              <span class="work__stat-label">Weekly Participation</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">9x</span>
+              <span class="work__stat-label">Weekly Posts</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">2x</span>
+              <span class="work__stat-label">7-Day Retention</span>
+            </div>
+          </div>
+        </div>
+        <div class="work__project-preview">
+          <img src="images/player-preview.jpg" alt="Player project preview" />
+        </div>
+      </div>
+
+      <!-- Card 2 — same placeholder content as Card 1 for now. Swap the logo, title,
+           stats, and screenshot once this project is ready. -->
+      <div class="work__card work__card--2">
+        <div class="work__card-content">
+          <img src="images/Player3.png" alt="Player" class="work__project-logo" />
+          <h3 class="work__project-title">
+            Redesigning a gaming social network with 40% weekly user participation
+          </h3>
+          <a href="#" class="work__cta">
+            View Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+          <div class="work__stats">
+            <div class="work__stat">
+              <span class="work__stat-number">40%</span>
+              <span class="work__stat-label">Weekly Participation</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">9x</span>
+              <span class="work__stat-label">Weekly Posts</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">2x</span>
+              <span class="work__stat-label">7-Day Retention</span>
+            </div>
+          </div>
+        </div>
+        <div class="work__project-preview">
+          <img src="images/swivi_cover2.avif" alt="Swivi project preview" />
+        </div>
+      </div>
+
+      <!-- Card 3 — same placeholder content as Card 1 for now. Swap the logo, title,
+           stats, and screenshot once this project is ready. -->
+      <div class="work__card work__card--3">
+        <div class="work__card-content">
+          <img src="images/Player3.png" alt="Player" class="work__project-logo" />
+          <h3 class="work__project-title">
+            Redesigning a gaming social network with 40% weekly user participation
+          </h3>
+          <a href="#" class="work__cta">
+            View Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+          <div class="work__stats">
+            <div class="work__stat">
+              <span class="work__stat-number">40%</span>
+              <span class="work__stat-label">Weekly Participation</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">9x</span>
+              <span class="work__stat-label">Weekly Posts</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">2x</span>
+              <span class="work__stat-label">7-Day Retention</span>
+            </div>
+          </div>
+        </div>
+        <div class="work__project-preview">
+          <img src="images/Physics_Redesign.avif" alt="Texas A&Map;M Website Redesign" />
+        </div>
+      </div>
+
+      <!-- Card 4 — same placeholder content as Card 1 for now. Swap the logo, title,
+           stats, and screenshot once this project is ready. -->
+      <div class="work__card work__card--4">
+        <div class="work__card-content">
+          <img src="images/TX_Logo.png" alt="Player" class="work__project-logo" />
+          <h3 class="work__project-title">
+            Redesigning a gaming social network with 40% weekly user participation
+          </h3>
+          <a href="#" class="work__cta">
+            View Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+          <div class="work__stats">
+            <div class="work__stat">
+              <span class="work__stat-number">40%</span>
+              <span class="work__stat-label">Weekly Participation</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">9x</span>
+              <span class="work__stat-label">Weekly Posts</span>
+            </div>
+            <div class="work__stat">
+              <span class="work__stat-number">2x</span>
+              <span class="work__stat-label">7-Day Retention</span>
+            </div>
+          </div>
+        </div>
+        <div class="work__project-preview">
+          <img src="images/pvfa.avif" alt="Player project preview" />
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" aria-label="Testimonials">
+      <div class="testimonials__intro">
+        <span class="testimonials__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+          Testimonials
+        </span>
+
+        <h2 class="testimonials__heading">Word On The Street About Me</h2>
+        <p class="testimonials__subheading">
+          My customers continue to be the core of my business and their authentic stories proves how I deliver
+        </p>
+      </div>
+
+      <!-- Row 1 — scrolls right. Duplicated once for a seamless loop; keep both copies in sync. -->
+      <div class="testimonials__row testimonials__row--top">
+        <div class="testimonials__track">
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Over the past three years with Mario, I've seen his impressive growth as a designer and coder. His
+              unwavering commitment and reliability make him an exceptional collaborator, always ready to lend a
+              helping hand. Working with him has been truly amazing."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Ryan.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Ryan Carmichael</div>
+                  <div class="testimonial-card__role">Senior Web Developer</div>
+                </div>
+              </div>
+              <img src="images/TX_Logo.png" alt="Texas A&amp;M" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Entrusting our social media to Mario was a game-changer! His top-notch content creation skills
+              propelled us to a remarkable 1.4 million followers. For any company looking to boost its social media
+              presence, Mario is the guide you've been looking for."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Tati.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Tatiana Erukhimova</div>
+                  <div class="testimonial-card__role">Physics Professor</div>
+                </div>
+              </div>
+              <img src="images/TX_Logo.png" alt="Texas A&amp;M" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Mario's meticulous eye and genuine passion for design were tremendous assets to our department. His
+              vital role in enhancing Texas A&amp;M Physics' websites showcased his talent for crafting intuitive,
+              engaging designs. With Mario, innovation takes center stage."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Heather.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Heather Walker</div>
+                  <div class="testimonial-card__role">Admin Coordinator</div>
+                </div>
+              </div>
+              <img src="images/TX_Logo.png" alt="Texas A&amp;M" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <!-- duplicate copy, aria-hidden so screen readers don't announce it twice -->
+          <article class="testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote">
+              "Over the past three years with Mario, I've seen his impressive growth as a designer and coder. His
+              unwavering commitment and reliability make him an exceptional collaborator, always ready to lend a
+              helping hand. Working with him has been truly amazing."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Ryan.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Ryan Carmichael</div>
+                  <div class="testimonial-card__role">Senior Web Developer</div>
+                </div>
+              </div>
+              <img src="images/TX_Logo.png" alt="" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote">
+              "Entrusting our social media to Mario was a game-changer! His top-notch content creation skills
+              propelled us to a remarkable 1.4 million followers. For any company looking to boost its social media
+              presence, Mario is the guide you've been looking for."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Tati.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Tatiana Erukhimova</div>
+                  <div class="testimonial-card__role">Physics Professor</div>
+                </div>
+              </div>
+              <img src="images/TX_Logo.png" alt="" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote">
+              "Mario's meticulous eye and genuine passion for design were tremendous assets to our department. His
+              vital role in enhancing Texas A&amp;M Physics' websites showcased his talent for crafting intuitive,
+              engaging designs. With Mario, innovation takes center stage."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Heather.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Heather Walker</div>
+                  <div class="testimonial-card__role">Admin Coordinator</div>
+                </div>
+              </div>
+              <img src="images/TX_Logo.png" alt="" class="testimonial-card__brand" />
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Row 2 — also scrolls right, same as row 1. Duplicated once for a seamless loop. -->
+      <div class="testimonials__row testimonials__row--bottom">
+        <div class="testimonials__track">
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Collaborating with Mario was a blast! His innovative human-centered design process injected fresh
+              energy into our project, creating an engaging user experience and an effortlessly usable platform.
+              Working with him felt like taking our game to the next level!"
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Yoni.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Yonathan Zetune</div>
+                  <div class="testimonial-card__role">Software Developer</div>
+                </div>
+              </div>
+              <img src="images/google-logo2.png" alt="Google" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Mario's touch truly made all the difference for Saxon Insurance. His creativity in logo design,
+              marketing, and social media breathed fresh life into our brand. We can't thank Mario enough for his
+              partnership and the incredible success it brought!"
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Bobby.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Bobby Saxon</div>
+                  <div class="testimonial-card__role">CEO Saxon Insurance</div>
+                </div>
+              </div>
+              <img src="images/Saxon_logo.svg" alt="Saxon" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Mario is a digital design wizard! He transformed a lackluster hardware store into an online
+              masterpiece. Every detail and interaction seamlessly catered to hardware companies. If you're
+              searching for a designer who listens and delivers, Mario is the answer."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Joe.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Joe Juarez</div>
+                  <div class="testimonial-card__role">CEO Epicenter</div>
+                </div>
+              </div>
+              <img src="images/epicenter.png" alt="Epicenter" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <!-- duplicate copy, aria-hidden so screen readers don't announce it twice -->
+          <article class="testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote">
+              "Collaborating with Mario was a blast! His innovative human-centered design process injected fresh
+              energy into our project, creating an engaging user experience and an effortlessly usable platform.
+              Working with him felt like taking our game to the next level!"
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Yoni.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Yonathan Zetune</div>
+                  <div class="testimonial-card__role">Software Developer</div>
+                </div>
+              </div>
+              <img src="images/google-logo2.png" alt="" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote">
+              "Mario's touch truly made all the difference for Saxon Insurance. His creativity in logo design,
+              marketing, and social media breathed fresh life into our brand. We can't thank Mario enough for his
+              partnership and the incredible success it brought!"
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Bobby.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Bobby Saxon</div>
+                  <div class="testimonial-card__role">CEO Saxon Insurance</div>
+                </div>
+              </div>
+              <img src="images/Saxon_logo.svg" alt="" class="testimonial-card__brand" />
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <p class="testimonial-card__quote">
+              "Mario is a digital design wizard! He transformed a lackluster hardware store into an online
+              masterpiece. Every detail and interaction seamlessly catered to hardware companies. If you're
+              searching for a designer who listens and delivers, Mario is the answer."
+            </p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__person">
+                <img src="images/Joe.jpg" alt="" class="testimonial-card__avatar" />
+                <div>
+                  <div class="testimonial-card__name">Joe Juarez</div>
+                  <div class="testimonial-card__role">CEO Epicenter</div>
+                </div>
+              </div>
+              <img src="images/epicenter.png" alt="" class="testimonial-card__brand" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" aria-label="About Mario">
+      <div class="about__content">
+        <span class="about__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          About Me
+        </span>
+
+        <h2 class="about__heading">Who is Mario, really?</h2>
+
+        <p class="about__description">
+          Hey, it's-a-me, Mario! When I'm not leaping on mushrooms, I'm skillfully navigating the realms of
+          design and code, crafting seamless user experiences.
+        </p>
+
+        <a href="#" class="about__cta">Learn More</a>
+      </div>
+
+      <div class="about__photo">
+        <img src="images/personal_picture.jpg" alt="Mario Chanona" />
+      </div>
+    </section>
+
+    <section class="cta-banner" aria-label="Contact">
+      <div class="cta-banner__card">
+        <div class="cta-banner__text">
+          <h2 class="cta-banner__heading">Let's Connect &amp; Create Something Amazing!</h2>
+          <p class="cta-banner__subheading">Reach out to me for collaborations, inquiries, or just to say hello.</p>
+        </div>
+
+        <a href="#contact" class="cta-banner__button">Let's Talk</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <a href="#top" class="footer__brand">
+          <img src="images/My_ Logo.png" alt="Mario Chanona" class="footer__logo-img" />
+        </a>
+
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#work" class="footer__link">Work</a>
+          <a href="#about" class="footer__link">About</a>
+          <a href="#playground" class="footer__link">Playground</a>
+          <a href="#resume" class="footer__link">Resume</a>
+        </nav>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Mario Chanona. All rights reserved.</p>
+
+        <div class="footer__socials">
+          <!-- No links wired up yet — swap each <span> for <a href="..."> once you have them -->
+          <span class="footer__icon" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56z" />
+            </svg>
+          </span>
+          <span class="footer__icon" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m2 7 10 6 10-6" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
