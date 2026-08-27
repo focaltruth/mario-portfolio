@@ -701,6 +701,10 @@ a {
   .about {
     grid-template-columns: 1fr;
   }
+  
+  .about__content {
+    text-align: center;
+  }
 }
 
 /* ---------- CTA banner ---------- */
