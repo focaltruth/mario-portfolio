@@ -1206,7 +1206,7 @@ a {
 
 .impact-card__stat {
   margin-top: 16px;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #fbfbfb;
 }
@@ -1220,7 +1220,7 @@ a {
 
 .impact-card__description {
   margin-top: 12px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #9b9ca1;
 }
@@ -1232,5 +1232,204 @@ a {
 
   .case-impact__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Case study Context Section ---------- */
+
+.case-context {
+  position: relative;
+  z-index: 1;
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 0 24px 120px;
+}
+
+.case-section__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.case-section__divider {
+  margin: 16px 0 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.case-section__heading {
+  margin-top: 24px;
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 4vw, 36px);
+  color: #fafafa;
+}
+
+.case-section__body {
+  margin-top: 24px;
+}
+
+.case-section__body > * + * {
+  margin-top: 20px;
+}
+
+.case-section__lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fbfbfb;
+}
+
+.case-section__quote {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fbfbfb;
+}
+
+.case-section__text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #9b9ca1;
+}
+
+@media (max-width: 640px) {
+  .case-context {
+    padding-bottom: 80px;
+  }
+}
+
+/* ---------- Case study: Problem ---------- */
+
+.case-problem {
+  position: relative;
+  z-index: 1;
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 0 24px 120px;
+}
+
+.case-problem__chart {
+  margin-top: 40px;
+  background: #141414;
+  border: 1px solid #2c2c2c;
+  border-radius: 16px;
+  padding: 56px 48px;
+}
+
+.case-problem__chart img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .case-problem {
+    padding-bottom: 80px;
+  }
+
+  .case-problem__chart {
+    padding: 20px;
+  }
+}
+
+/* ---------- Case study: Solution ---------- */
+
+.case-solution {
+  position: relative;
+  z-index: 1;
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 0 24px 120px;
+}
+
+.case-solution__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.solution-card {
+  display: flex;
+  flex-direction: column;
+  background: #171717;
+  border: 1px solid #2e2f2f;
+  border-radius: 20px;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.solution-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fbfbfb;
+}
+
+.solution-card__description {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9b9ca1;
+}
+
+.solution-card__media {
+  margin-top: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.solution-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.solution-card__media--stacked {
+  position: relative;
+  margin-top: 28px;
+  height: 320px;
+  overflow: visible;
+}
+
+.solution-card__media--stacked .post-svg {
+  position: absolute;
+  width: 80%;
+  height: auto;
+}
+
+.solution-card__media--stacked .post-svg--back {
+  top: 8px;
+  left: 0;
+  transform: rotate(-4deg);
+}
+
+.solution-card__media--stacked .post-svg--front {
+  top: 132px;
+  left: 18%;
+  transform: rotate(3deg);
+}
+
+@media (max-width: 640px) {
+  .solution-card__media--stacked {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 860px) {
+  .case-solution__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-solution {
+    padding-bottom: 80px;
   }
 }
