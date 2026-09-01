@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player 3 — Mario Chanona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <main>
+    <header class="navbar" id="top">
+      <a href="index.html" class="navbar__brand">
+        <img src="images/My_ Logo.png" alt="Mario Chanona" class="navbar__logo-img" />
+      </a>
+      <nav class="navbar__links" aria-label="Primary">
+        <a href="index.html#work" class="navbar__link">Work</a>
+        <a href="index.html#about" class="navbar__link">About</a>
+        <a href="index.html#playground" class="navbar__link">Playground</a>
+        <a href="index.html#resume" class="navbar__link">Resume</a>
+      </nav>
+      <a href="index.html#contact" class="navbar__cta">Let's Talk</a>
+
+      <button type="button" class="navbar__toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="navbar__toggle-icon navbar__toggle-icon--menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+        <svg class="navbar__toggle-icon navbar__toggle-icon--close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu__header">
+        <a href="index.html" class="mobile-menu__brand">
+          <img src="images/My_ Logo.png" alt="Mario Chanona" class="mobile-menu__logo-img" />
+        </a>
+        <button type="button" class="mobile-menu__close" id="menuClose" aria-label="Close menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a href="index.html#work" class="mobile-menu__link">Work</a>
+        <a href="index.html#about" class="mobile-menu__link">About</a>
+        <a href="index.html#playground" class="mobile-menu__link">Playground</a>
+        <a href="index.html#resume" class="mobile-menu__link">Resume</a>
+      </nav>
+
+      <a href="index.html#contact" class="mobile-menu__cta">Let's Talk</a>
+    </div>
+
+    <script>
+      (function () {
+        var toggle = document.getElementById('menuToggle');
+        var closeBtn = document.getElementById('menuClose');
+        var menu = document.getElementById('mobileMenu');
+
+        function openMenu() {
+          menu.classList.add('is-open');
+          toggle.classList.add('is-active');
+          toggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          menu.classList.remove('is-open');
+          toggle.classList.remove('is-active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', function () {
+          menu.classList.contains('is-open') ? closeMenu() : openMenu();
+        });
+        closeBtn.addEventListener('click', closeMenu);
+        menu.querySelectorAll('.mobile-menu__link, .mobile-menu__cta').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+      })();
+    </script>
+
+    <section class="case-hero">
+      <span class="case-hero__eyebrow">
+        <img src="images/Player3_icon.png" alt="" class="case-hero__icon" />
+        Player 3
+      </span>
+
+      <h1 class="case-hero__title">Driving 40% increase in WAU for a consumer-facing startup</h1>
+
+      <div class="case-hero__preview">
+        <img src="images/player-preview.jpg" alt="Player 3 case study preview" />
+      </div>
+    </section>
+
+    <section class="case-summary">
+      <h2 class="case-summary__heading">Executive Summary</h2>
+      <hr class="case-summary__divider" />
+
+      <div class="case-summary__grid">
+        <div class="case-summary__text">
+          <p>
+            Player 3 was built to connect developers and players, but long form articles were quietly killing
+            that mission. As the sole designer behind Player 3's redesign, I reimagined the platform around
+            Bits, a lightweight update system that made sharing progress as easy as sending a tweet, driving
+            40% of weekly active users to post every single week.
+          </p>
+
+          <a href="https://player3.io" target="_blank" rel="noopener" class="case-summary__cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <path d="M15 3h6v6" />
+              <path d="M10 14 21 3" />
+            </svg>
+            View Website
+          </a>
+        </div>
+
+        <div class="case-summary__meta">
+          <div class="case-summary__meta-item">
+            <span class="case-summary__meta-label">Role</span>
+            <span class="case-summary__meta-value">Product Designer</span>
+          </div>
+          <div class="case-summary__meta-item">
+            <span class="case-summary__meta-label">Timeline</span>
+            <span class="case-summary__meta-value">Sept 2025 - March 2026</span>
+          </div>
+          <div class="case-summary__meta-item">
+            <span class="case-summary__meta-label">Company size</span>
+            <span class="case-summary__meta-value">4</span>
+          </div>
+          <div class="case-summary__meta-item">
+            <span class="case-summary__meta-label">Industry</span>
+            <span class="case-summary__meta-value">Gaming</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-impact">
+      <h2 class="case-impact__heading">Impact</h2>
+      <hr class="case-impact__divider" />
+
+      <div class="case-impact__grid">
+        <article class="impact-card">
+          <div class="impact-card__label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
+            </svg>
+            Weekly Active Users
+          </div>
+          <h3 class="impact-card__stat">40% Weekly Posting Participation</h3>
+          <p class="impact-card__description">
+            Posting shifted from passive browsing to active contribution, with 40% of weekly active users
+            creating posts each week.
+          </p>
+        </article>
+
+        <article class="impact-card">
+          <div class="impact-card__label">
+                <img src="images/finance.svg" alt="" class="impact-card__icon" />
+                Platform Growth
+          </div>
+          <h3 class="impact-card__stat">9x Increase in Weekly Posts</h3>
+          <p class="impact-card__description">
+            What started as roughly 1 post per week exploded to over 10, signaling that users finally had a
+            reason to keep showing up.
+          </p>
+        </article>
+
+        <article class="impact-card">
+          <div class="impact-card__label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z" />
+            </svg>
+            User Retention
+          </div>
+          <h3 class="impact-card__stat">2x Higher 7-Day Retention</h3>
+          <p class="impact-card__description">
+            Removing the posting barrier gave users a reason to return, with twice as many people coming back
+            within their first seven days.
+          </p>
+        </article>
+
+        <article class="impact-card">
+          <div class="impact-card__label">
+                <img src="images/groups.svg" alt="" class="impact-card__icon" />
+                Community Engagement
+          </div>
+          <h3 class="impact-card__stat">2x More Replies Per Post</h3>
+          <p class="impact-card__description">
+            Short updates encouraged faster back-and-forth conversations including feedback, advice, reactions,
+            and recommendations.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

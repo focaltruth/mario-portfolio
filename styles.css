@@ -1001,3 +1001,236 @@ a {
     display: inline-flex;
   }
 }
+
+/* ---------- Case study hero ---------- */
+
+.case-hero {
+  position: relative;
+  z-index: 1;
+  padding: 64px 24px 0;
+  text-align: center;
+}
+
+.case-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.case-hero__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.case-hero__title {
+  margin: 16px auto 0;
+  max-width: 900px;
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-size: clamp(28px, 4vw, 44px);
+  color: #fafafa;
+}
+
+.case-hero__preview {
+  max-width: 1194px;
+  margin: 48px auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0f0f0f;
+}
+
+.case-hero__preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .case-hero {
+    padding: 48px 20px 0;
+  }
+}
+
+/* ---------- Case study: Executive Summary ---------- */
+
+.case-summary {
+  position: relative;
+  z-index: 1;
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 120px 24px 0;
+}
+
+.case-summary__heading {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 4vw, 36px);
+  color: #fafafa;
+}
+
+.case-summary__divider {
+  margin: 24px 0 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.case-summary__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 80px;
+}
+
+.case-summary__text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.case-summary__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, #008e8b 0%, #00514f 100%) padding-box,
+    linear-gradient(90deg, #00514f 0%, #008e8b 100%) border-box;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.case-summary__cta:hover {
+  opacity: 0.9;
+}
+
+.case-summary__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-summary__meta-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-summary__meta-item:first-child {
+  padding-top: 0;
+}
+
+.case-summary__meta-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.case-summary__meta-value {
+  display: block;
+  margin-top: 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+@media (max-width: 860px) {
+  .case-summary {
+    padding-top: 80px;
+  }
+
+  .case-summary__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ---------- Case study: Impact ---------- */
+
+.case-impact {
+  position: relative;
+  z-index: 1;
+  max-width: 1194px;
+  margin: 0 auto;
+  padding: 120px 24px 160px;
+}
+
+.case-impact__heading {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 4vw, 36px);
+  color: #fafafa;
+}
+
+.case-impact__divider {
+  margin: 24px 0 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.case-impact__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.impact-card {
+  background: #141414;
+  border: 1px solid #2c2c2c;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.impact-card__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.impact-card__stat {
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fbfbfb;
+}
+
+.impact-card__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.impact-card__description {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9b9ca1;
+}
+
+@media (max-width: 860px) {
+  .case-impact {
+    padding: 80px 24px 120px;
+  }
+
+  .case-impact__grid {
+    grid-template-columns: 1fr;
+  }
+}
