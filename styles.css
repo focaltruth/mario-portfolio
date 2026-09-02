@@ -1363,18 +1363,17 @@ a {
   border: 1px solid #2e2f2f;
   border-radius: 20px;
   padding: 32px;
-  overflow: hidden;
 }
 
 .solution-card__title {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
   color: #fbfbfb;
 }
 
 .solution-card__description {
   margin-top: 12px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #9b9ca1;
 }
@@ -1389,6 +1388,11 @@ a {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.solution-card__media--games {
+  border-radius: 0;
+  overflow: visible;
 }
 
 .solution-card__media--stacked {
