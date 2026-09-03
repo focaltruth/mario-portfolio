@@ -564,6 +564,11 @@ a {
   color: var(--text-secondary);
 }
 
+.testimonial-card__quote strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
 .testimonial-card__footer {
   display: flex;
   align-items: center;
@@ -610,10 +615,18 @@ a {
 
 .testimonial-card__brand {
   flex-shrink: 0;
-  max-width: 130px;
+  max-width: 114px;
   height: 22px;
   width: auto;
   object-fit: contain;
+}
+
+.testimonial-card__brand--player3 {
+  height: 17px;
+}
+
+.testimonial-card__brand--ibm {
+  height: 18px;
 }
 
 @media (max-width: 640px) {
